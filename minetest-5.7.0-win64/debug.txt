@@ -748,3 +748,10 @@
 2023-04-15 13:10:53: ACTION[Server]: singleplayer dies at (66,31,20). No bones placed
 2023-04-15 13:10:58: ACTION[Server]: singleplayer respawns at (0,12,0)
 2023-04-15 13:11:36: ACTION[Main]: Server: Shutting down
+
+
+-------------
+  Separator
+-------------
+
+2023-04-15 14:05:07: ERROR[Main]: Game specified in default_game [minetest] is invalid.
