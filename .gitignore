@@ -3,5 +3,7 @@ minetest-5.7.0-win64/minetest.conf
 minetest-5.7.0-win64/cache/
 minetest-5.7.0-win64/worlds/
 minetest-5.7.0-win64/games/*
+minetest-5.7.0-win64/mods/*
 !minetest-5.7.0-win64/games/mineclone-survey
+
 
