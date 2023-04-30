@@ -1,7 +1,7 @@
 minetest/debug.txt
 minetest/minetest.conf
 minetest/cache/
-minetest/worlds/
+minetest/worlds/*
 minetest/games/*
 minetest/mods/
 !minetest/games/mineclone-survey
