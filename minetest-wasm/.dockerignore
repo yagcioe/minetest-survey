@@ -1,8 +1,0 @@
-Dockerfile
-build/
-build-*/
-minetest
-www
-.git
-.github
-deploy.sh
