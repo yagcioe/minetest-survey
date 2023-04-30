@@ -5,5 +5,5 @@ minetest/worlds/
 minetest/games/*
 minetest/mods/
 !minetest/games/mineclone-survey
-
+!minetest/worlds/mineclone-survey
 
