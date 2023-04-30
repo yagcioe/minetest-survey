@@ -1,0 +1,10 @@
+enable_damage = false
+creative_mode = true
+mod_storage_backend = sqlite3
+auth_backend = sqlite3
+player_backend = sqlite3
+backend = sqlite3
+gameid = mineclone-survey
+world_name = wad
+server_announce = false
+load_mod_vehicles = false
