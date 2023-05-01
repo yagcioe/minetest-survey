@@ -1,7 +1,7 @@
 day_count = 0
-lbm_introduction_times = mcl_anvils:update_formspec_0_60_0~0;mcl_chests:replace_old_ender_form~0;mcl_chests:update_shulker_box_formspecs_0_60_0~0;mcl_dispensers:update_formspecs_0_60_0~0;mcl_droppers:update_formspecs_0_60_0~0;mcl_furnaces:update_formspecs_0_60_0~0;mcl_hoppers:update_formspec_0_60_0~0;mcl_itemframes:update_legacy_item_frames~0;mcl_mapgen_core:fix_foliage_palette_indexes~0;mcl_mapgen_core:fix_grass_palette_indexes~0;mcl_mapgen_core:fix_water_palette_indexes~0;mcl_mushrooms:replace_legacy_mushroom_caps~0;mcl_ocean:fix_incorrect_seagrass~0;mcl_ocean:kelp_init_83~0;
+lbm_introduction_times = :doors:replace_doors_door_glass~0;:doors:replace_doors_door_obsidian_glass~0;:doors:replace_doors_door_steel~0;:doors:replace_doors_door_wood~0;:doors:replace_xpanes_door_steel_bar~0;:farming:start_nodetimer_cotton~0;:farming:start_nodetimer_wheat~0;default:3dtorch~0;default:convert_saplings_to_node_timer~0;default:upgrade_chest_locked_v2~0;default:upgrade_chest_v2~0;mesecons_pistons:replace_legacy_piston_down~0;mesecons_pistons:replace_legacy_piston_up~0;xpanes:gen2~0;
 lbm_introduction_times_version = 1
 last_clear_objects_time = 0
-time_of_day = 6901
-game_time = 38
+time_of_day = 6312
+game_time = 9
 EnvArgsEnd
