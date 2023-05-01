@@ -1,55 +1,27 @@
 unused_args = false
 allow_defined_top = true
-max_line_length = false
-redefined = false
-
-globals = {
-    "minetest", "core",
-}
 
 read_globals = {
 	"DIR_DELIM",
-	"dump", "dump2",
+	"minetest",
+	"dump",
 	"vector",
 	"VoxelManip", "VoxelArea",
-	"PseudoRandom", "PcgRandom", "PerlinNoise", "PerlinNoiseMap",
+	"PseudoRandom", "PcgRandom",
 	"ItemStack",
 	"Settings",
 	"unpack",
-
-	table = {
-		fields = {
-			"copy",
-			"indexof",
-			"insert_all",
-			"key_value_swap",
-		}
-	},
-
-	string = {
-		fields = {
-			"split",
-			"trim",
-		}
-	},
-
-	math = {
-		fields = {
-			"hypot",
-			"sign",
-			"factorial"
-		}
-	},
-    ------
-    --MODS
-    ------
-
-    --GENERAL
-    "default",
-
-    --ENTITIES
-    "cmi",
-
-    --HUD
-    "sfinv", "sfinv_buttons", "unified_inventory", "cmsg", "inventory_plus",
+	-- Silence errors about custom table methods.
+	table = { fields = { "copy", "indexof" } },
+	-- Silence warnings about accessing undefined fields of global 'math'
+	math = { fields = { "sign" } }
 }
+
+-- Overwrites minetest.handle_node_drops
+files["mods/creative/init.lua"].globals = { "minetest" }
+
+-- Overwrites minetest.calculate_knockback
+files["mods/player_api/api.lua"].globals = { "minetest" }
+
+-- Don't report on legacy definitions of globals.
+files["mods/default/legacy.lua"].global = false
