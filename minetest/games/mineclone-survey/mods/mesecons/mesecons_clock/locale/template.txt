@@ -1,0 +1,4 @@
+# textdomain: mesecons_clock
+
+### init.lua ###
+Clock=
