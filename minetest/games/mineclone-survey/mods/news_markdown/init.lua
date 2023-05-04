@@ -1,6 +1,6 @@
 local storage = minetest.get_mod_storage()
 local prefix = "newsOnJoinExceptions_"
-
+local S = core.get_translator("__builtin")
 local colors = {
     background_color = "#FFF0",
     font_color = "#FFF",
@@ -130,16 +130,19 @@ end
 
 
 minetest.register_chatcommand("tut1", {
+    params = S("[<name>]"),
     description = "Shows the servers tut1",
     func = tut1
 })
 
 minetest.register_chatcommand("tut2", {
+    params = S("[<name>]"),
     description = "Shows the servers tut2",
     func = tut2
 })
 
 minetest.register_chatcommand("tut3", {
+    params = S("[<name>]"),
     description = "Shows the servers tut3",
     func = tut3
 })
