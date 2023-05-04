@@ -30,6 +30,13 @@ minetest.register_chatcommand("show", {
     description = S("Shows the servers <filename> to <name>"),
     func = function(name, param)
         local found, _, target, filename = param:find("^([^%s]+)%s+(.*)$")
+        if found == nil then
+			minetest.chat_send_player(name, "Invalid usage: " .. param)
+			return
+		end
+		if not minetest.get_player_by_name(target) then
+			minetest.chat_send_player(name, "Invalid target: " .. target)
+		end
         local news_formspec = "formspec_version[5]" ..
             "size[25, 15]" ..
             "noprepend[]" ..
@@ -38,6 +45,10 @@ minetest.register_chatcommand("show", {
 
         local news_filename = minetest.get_worldpath() .. "/news/" .. filename .. ".md"
         local news_file = io.open(news_filename, "r")
+        if news_file == nil then
+			minetest.chat_send_player(name, "File doesn´t exist. ")
+			return
+		end
         local news_markdown = news_file:read("*a")
         news_file:close()
 
