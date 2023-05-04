@@ -22,41 +22,7 @@ local colors = {
     block_quote_color = "#FFA",
 }
 
-
-local function tut1(name)
-    local player_info = minetest.get_player_information(name)
-
-    local news_formspec = "formspec_version[5]" ..
-        "size[25, 15]" ..
-        "noprepend[]" ..
-        "bgcolor[" .. colors.background_color .. "]" ..
-        "button_exit[21.8, 13.8; 3, 1;exit; OK]" 
-
-    local news_filename = minetest.get_worldpath() .. "/news/tut1.md"
-    local news_file = io.open(news_filename, "r")
-    local news_markdown = news_file:read("*a")
-    news_file:close()
-
-    news_formspec = news_formspec .. md2f.md2f(0.2, 0.2, 24.8, 13.4, news_markdown, "server_news", colors)
-
-    -- Gotta log 'em all!
-    minetest.show_formspec(name, "server_news", news_formspec)
     
-    minetest.register_on_player_receive_fields(function(player, formname, fields)
-        name = player:get_player_name()
-
-        -- Don't do anything when the exit button is clicked, because no checkbox data is sent then
-        if not fields.exit then
-            if (fields.dont_show_again == "true") then
-                storage:set_int(prefix .. name, 1)
-            else
-                storage:set_int(prefix .. name, 0)
-            end
-
-            minetest.log("action", "Toggled newsOnJoinExceptions_" .. name .. " to " .. tostring(storage:get_int(prefix .. name)))
-        end
-    end)
-end
 
 local function tut2(name)
     local player_info = minetest.get_player_information(name)
@@ -130,20 +96,51 @@ end
 
 
 minetest.register_chatcommand("tut1", {
-    params = S("[<name>]"),
-    description = "Shows the servers tut1",
-    func = tut1
+    params = "<name>",
+    description = S("Shows the servers tut1 to <name>"),
+    func = function(name, param)
+        local found, _, target = param:find("^([^%s]+)%s+(%d+)$")
+        local news_formspec = "formspec_version[5]" ..
+            "size[25, 15]" ..
+            "noprepend[]" ..
+            "bgcolor[" .. colors.background_color .. "]" ..
+            "button_exit[21.8, 13.8; 3, 1;exit; OK]" 
+
+        local news_filename = minetest.get_worldpath() .. "/news/tut1.md"
+        local news_file = io.open(news_filename, "r")
+        local news_markdown = news_file:read("*a")
+        news_file:close()
+
+        news_formspec = news_formspec .. md2f.md2f(0.2, 0.2, 24.8, 13.4, news_markdown, "server_news", colors)
+
+        minetest.show_formspec(name, "server_news", news_formspec)
+    
+        minetest.register_on_player_receive_fields(function(player, formname, fields)
+            name = player:get_player_name()
+
+            -- Don't do anything when the exit button is clicked, because no checkbox data is sent then
+            if not fields.exit then
+                if (fields.dont_show_again == "true") then
+                storage:set_int(prefix .. name, 1)
+              else
+                    storage:set_int(prefix .. name, 0)
+             end
+
+                minetest.log("action", "Toggled newsOnJoinExceptions_" .. name .. " to " .. tostring(storage:get_int(prefix .. name)))
+         end
+     end)
+    end
 })
 
 minetest.register_chatcommand("tut2", {
-    params = S("[<name>]"),
-    description = "Shows the servers tut2",
+    params = "<name>",
+    description = S("Shows the servers tut1 to <name>"),
     func = tut2
 })
 
 minetest.register_chatcommand("tut3", {
-    params = S("[<name>]"),
-    description = "Shows the servers tut3",
+    params = "<name>",
+    description = S("Shows the servers tut1 to <name>"),
     func = tut3
 })
 
