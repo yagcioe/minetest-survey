@@ -1,1 +1,1 @@
-# Hold [left-click] to destroy plants. Destroy the glass block obstructing your path.
+# Hold [left-click] to destroy plants. Destroy all plants to continue.

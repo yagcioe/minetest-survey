@@ -41,7 +41,7 @@ minetest.register_chatcommand("show", {
             "size[25, 15]" ..
             "noprepend[]" ..
             "bgcolor[" .. colors.background_color .. "]" ..
-            "button_exit[21.8, 13.8; 3, 1;exit; OK]" 
+            "button_exit[21.8, 13.8; 3, 1;exit; OK]"
 
         local news_filename = minetest.get_worldpath() .. "/news/" .. filename .. ".md"
         local news_file = io.open(news_filename, "r")
