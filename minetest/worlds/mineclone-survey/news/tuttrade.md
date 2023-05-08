@@ -1,0 +1,1 @@
+# The Trader appeared! To start trading initiate a dialogue [right-click]. The Trader will show you his wares. As long as you have sufficient gold you can pick the flowers you want with howering your mouse over the plant icon and pressing [left-click]. To select an item from your Inventory you can use the [mouse-wheel].

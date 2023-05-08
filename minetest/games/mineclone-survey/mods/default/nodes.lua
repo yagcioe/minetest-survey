@@ -457,7 +457,17 @@ minetest.register_node("default:dirt_with_grass", {
 		footstep = {name = "default_grass_footstep", gain = 0.25},
 	}),
 })
-
+minetest.register_node("default:grass_scenario", {
+	description = S("Unbreakable Grass"),
+	tiles = {"default_grass.png", "default_dirt.png",
+		{name = "default_dirt.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "default:dirt",
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
 minetest.register_node("default:dirt_with_grass_footsteps", {
 	description = S("Dirt with Grass and Footsteps"),
 	tiles = {"default_grass.png^default_footprint.png", "default_dirt.png",

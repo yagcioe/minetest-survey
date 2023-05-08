@@ -33,11 +33,6 @@ mobs.human = {
 				"default:gold_ingot 1", 1},
 		{"flowers:geranium 4",
 				"default:gold_ingot 1", 1},
-		{"default:sapling 2",
-				"default:gold_ingot 1", 1},
-		{"default:junglesapling 2",
-				"default:gold_ingot 1", 1},
-
 	}
 }
 

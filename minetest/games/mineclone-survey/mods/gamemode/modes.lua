@@ -24,7 +24,24 @@ gamemode.register("survival", {
     interact = true,
   },
 })
-
+gamemode.register("scenario", {
+	caption = "Scenario Mode",
+	aliases = {"sc", "7"},
+	page_mods = {"sfinv", "3d_armor"},
+	damage = false,
+  	breath = false,
+  hand = {
+		full_punch_interval = 1.0,
+		max_drop_level = 0,
+		groupcaps = {
+			snappy = {times={[3]=0.40}, uses=0, maxlevel=3},
+		},
+		damage_groups = {fleshy=0},
+	},
+	privileges = {
+    interact = false,
+  },
+})
 local digtime = 25
 local caps = {times = {digtime, digtime, digtime}, uses = 0, maxlevel = 256}
 -- [gamemode] Creative

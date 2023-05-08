@@ -1,4 +1,4 @@
-enable_damage = true
+enable_damage = false
 creative_mode = true
 mod_storage_backend = sqlite3
 auth_backend = sqlite3
