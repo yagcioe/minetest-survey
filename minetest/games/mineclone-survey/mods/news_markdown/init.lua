@@ -72,6 +72,7 @@ minetest.register_chatcommand("show", {
      end)
     end
 })
+
 minetest.register_chatcommand("toggle_news", {
     description = "Toggles showing the news to you when you log in",
     func = function(name)
