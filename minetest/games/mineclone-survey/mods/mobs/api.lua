@@ -764,13 +764,13 @@ function mob_class:update_tag()
 		end
 	end
 
-	self.infotext = "Health: " .. self.health .. " / " .. self.hp_max
-		.. (self.owner == "" and "" or "\nOwner: " .. self.owner)
-		.. text
+	--self.infotext = "Health: " .. self.health .. " / " .. self.hp_max
+		--.. (self.owner == "" and "" or "\nOwner: " .. self.owner)
+		--.. text
 
 	-- set changes
-	self.object:set_properties({
-			nametag = self.nametag, nametag_color = col, infotext = self.infotext})
+	--self.object:set_properties({
+			--nametag = self.nametag, nametag_color = col, infotext = self.infotext})
 end
 
 

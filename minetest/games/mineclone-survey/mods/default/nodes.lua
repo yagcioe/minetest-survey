@@ -2846,7 +2846,7 @@ minetest.register_node("default:meselamp", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
+	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
 	light_source = default.LIGHT_MAX,
 })
