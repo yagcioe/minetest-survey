@@ -867,7 +867,7 @@ minetest.register_node("default:junglewood", {
 	place_param2 = 0,
 	tiles = {"default_junglewood.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {cracky=3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -2857,7 +2857,7 @@ minetest.register_node("default:meselamp", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
+	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
 	light_source = default.LIGHT_MAX,
 })
@@ -2876,6 +2876,7 @@ default.register_mesepost("default:mese_post_light_acacia_wood", {
 
 default.register_mesepost("default:mese_post_light_junglewood", {
 	description = S("Jungle Wood Mese Post Light"),
+	groups = {cracky = 3},
 	texture = "default_fence_junglewood.png",
 	material = "default:junglewood",
 })
