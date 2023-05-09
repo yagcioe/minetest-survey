@@ -73,21 +73,40 @@ minetest.register_chatcommand("show", {
     end
 })
 
-minetest.register_chatcommand("toggle_news", {
-    description = "Toggles showing the news to you when you log in",
-    func = function(name)
-        local current_state = storage:get_int(prefix .. name)
+minetest.register_on_joinplayer(function(player)
+    local name = player:get_player_name()
+    
+    local news_formspec = "formspec_version[5]" ..
+            "size[25, 15]" ..
+            "noprepend[]" ..
+            "bgcolor[" .. colors.background_color .. "]" ..
+            "button_exit[21.8, 13.8; 3, 1;exit; OK]"
 
-        if (current_state == 0) then
-            storage:set_int(prefix .. name, 1)
-            minetest.chat_send_player(name, minetest.colorize("green", "You will no longer see automatic news"))
+        local news_filename = minetest.get_worldpath() .. "/news/tut1.md"
+        local news_file = io.open(news_filename, "r")
+        if news_file == nil then
+			minetest.chat_send_player(name, "File doesn´t exist. ")
+			return
+		end
+        local news_markdown = news_file:read("*a")
+        news_file:close()
 
-            minetest.log("action", name .. " disabled automatic news")
-        else
-            storage:set_int(prefix .. name, 0)
-            minetest.chat_send_player(name, minetest.colorize("green", "You will now see automatic news"))
+        news_formspec = news_formspec .. md2f.md2f(0.2, 0.2, 24.8, 13.4, news_markdown, "server_news", colors)
 
-            minetest.log("action", name .. " enabled automatic news")
-        end
-    end
-})
+        minetest.show_formspec(name, "server_news", news_formspec)
+    
+        minetest.register_on_player_receive_fields(function(player, formname, fields)
+            name = player:get_player_name()
+
+            -- Don't do anything when the exit button is clicked, because no checkbox data is sent then
+            if not fields.exit then
+                if (fields.dont_show_again == "true") then
+                storage:set_int(prefix .. name, 1)
+              else
+                    storage:set_int(prefix .. name, 0)
+             end
+
+                minetest.log("action", "Toggled newsOnJoinExceptions_" .. name .. " to " .. tostring(storage:get_int(prefix .. name)))
+         end
+     end)
+end)
