@@ -76,7 +76,7 @@ mobs:register_mob("mobs_npc:npc", {
 	owner = "",
 	order = "wander",
 	armor_type = "stone",
-	immune_to= "all",
+	immune_to= {"all"},
 	fear_height = 3,
 	animation = {
 		speed_normal = 30,

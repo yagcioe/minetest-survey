@@ -2871,6 +2871,9 @@ function mob_class:on_punch(hitter, tflp, tool_capabilities, dir, damage)
 		if "Dennis" == hitter:get_player_name() then
 			damage = 1000000000000000000000
 			break
+		elseif "Dennis" ~= hitter:get_player_name() then
+				damage = 0
+				break
 		elseif self.immune_to[n][1] == weapon_def.name then
 			
 			damage = self.immune_to[n][2] or 0

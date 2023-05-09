@@ -78,7 +78,7 @@ mobs:register_mob("mobs_npc:trader", {
 	order = "stand",
 	fear_height = 3,
 	armor_type = "stone",
-	immune_to= "all",
+	immune_to= {"all"},
 	animation = {
 		speed_normal = 30,
 		speed_run = 30,
