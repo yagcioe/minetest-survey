@@ -370,7 +370,6 @@ core.register_node(":air", {
 	drop = "",
 	groups = {not_in_creative_inventory=1},
 })
-
 core.register_node(":ignore", {
 	description = S("Ignore"),
 	inventory_image = "ignore.png",

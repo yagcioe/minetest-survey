@@ -272,6 +272,17 @@ minetest.register_node("default:cobble", {
 	groups = {cracky = 3, stone = 2},
 	sounds = default.node_sound_stone_defaults(),
 })
+minetest.register_node("default:barrier", {
+	description = S("Barrier"),
+	drawtype = "airlike",
+	tiles = {"transparent.png"},
+	is_ground_content = false,
+	--pointable = false,
+	sunlight_propagates = true,
+	light_source = 20,
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
 
 minetest.register_node("default:stonebrick", {
 	description = S("Stone Brick"),
