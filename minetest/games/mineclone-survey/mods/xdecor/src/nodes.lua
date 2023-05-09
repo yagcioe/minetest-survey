@@ -12,7 +12,7 @@ local function register_pane(name, desc, def)
 		textures = {"xdecor_" .. name .. ".png", "" ,"xdecor_" .. name .. ".png"},
 		inventory_image = "xdecor_" .. name .. ".png",
 		wield_image = "xdecor_" .. name .. ".png",
-		groups = def.groups,
+		groups = {cracky = 3},
 		sounds = def.sounds or default.node_sound_defaults(),
 		recipe = def.recipe
 	})

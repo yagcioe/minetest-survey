@@ -813,7 +813,7 @@ local function handle_give_command(cmd, giver, receiver, stackstring)
 		msg = S("@1 added to inventory.", stackstring)
 	end
 	if giver == receiver then
-		return true, msg
+		return true
 	else
 		local msg_other
 		if partiality == true then
@@ -826,7 +826,7 @@ local function handle_give_command(cmd, giver, receiver, stackstring)
 			msg_other = S("@1 added to inventory of @2.",
 					stackstring, receiver)
 		end
-		return true, msg_other
+		return true
 	end
 end
 
@@ -1317,10 +1317,9 @@ core.register_chatcommand("clearinv", {
 			player:get_inventory():set_list("main", {})
 			player:get_inventory():set_list("craft", {})
 			player:get_inventory():set_list("craftpreview", {})
-			core.log("action", name.." clears "..player:get_player_name().."'s inventory")
-			return true, S("Cleared @1's inventory.", player:get_player_name())
+			return true
 		else
-			return false, S("Player must be online to clear inventory!")
+			return false
 		end
 	end,
 })
