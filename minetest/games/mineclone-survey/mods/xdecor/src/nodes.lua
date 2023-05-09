@@ -72,7 +72,7 @@ xdecor.register("barrel", {
 	description = S("Barrel"),
 	tiles = {"xdecor_barrel_top.png", "xdecor_barrel_top.png", "xdecor_barrel_sides.png"},
 	on_place = minetest.rotate_node,
-	groups = {cracky=3},
+	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 

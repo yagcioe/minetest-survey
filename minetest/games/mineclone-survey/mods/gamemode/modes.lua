@@ -36,7 +36,7 @@ gamemode.register("scenario", {
 		groupcaps = {
 			snappy = {times={[3]=0.40}, uses=0, maxlevel=3},
 		},
-		damage_groups = {fleshy=0},
+
 	},
 	privileges = {
     interact = false,
