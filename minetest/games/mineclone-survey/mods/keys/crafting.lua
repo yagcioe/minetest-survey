@@ -2,12 +2,7 @@
 -- Crafting recipes
 --
 
-minetest.register_craft({
-	output = "keys:skeleton_key",
-	recipe = {
-		{"default:gold_ingot"},
-	}
-})
+
 
 --
 -- Cooking recipes

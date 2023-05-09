@@ -186,16 +186,6 @@ elseif minetest.global_exists("smart_inventory") then -- smart_inventory install
 		smartfs_callback = smart_worldedit_gui_callback,
 		sequence = 99
 	})
-elseif minetest.global_exists("sfinv") then -- sfinv installed
-	assert(sfinv.enabled)
-	local orig_get = sfinv.pages["sfinv:crafting"].get
-	sfinv.override_page("sfinv:crafting", {
-		get = function(self, player, context)
-			local can_worldedit = minetest.check_player_privs(player, {worldedit=true})
-			local fs = orig_get(self, player, context)
-			return fs .. (can_worldedit and "image_button[0,0;1,1;inventory_plus_worldedit_gui.png;worldedit_gui;]" or "")
-		end
-	})
 
 	--show the form when the button is pressed and hide it when done
 	minetest.register_on_player_receive_fields(function(player, formname, fields)

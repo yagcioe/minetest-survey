@@ -187,15 +187,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "xdecor:rooster",
-	recipe = {
-		{"default:gold_ingot", "", "default:gold_ingot"},
-		{"", "default:gold_ingot", ""},
-		{"default:gold_ingot", "", "default:gold_ingot"}
-	}
-})
-
-minetest.register_craft({
 	output = "xdecor:speaker",
 	recipe = {
 		{"default:gold_ingot", "default:copper_ingot", "default:gold_ingot"},

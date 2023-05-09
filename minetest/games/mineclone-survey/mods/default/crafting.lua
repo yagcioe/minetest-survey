@@ -127,15 +127,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:goldblock",
-	recipe = {
-		{"default:gold_ingot", "default:gold_ingot", "default:gold_ingot"},
-		{"default:gold_ingot", "default:gold_ingot", "default:gold_ingot"},
-		{"default:gold_ingot", "default:gold_ingot", "default:gold_ingot"},
-	}
-})
-
-minetest.register_craft({
 	output = "default:diamondblock",
 	recipe = {
 		{"default:diamond", "default:diamond", "default:diamond"},
