@@ -4473,8 +4473,6 @@ function mobs:capture_mob(
 	if not minetest.check_player_privs(name, "protection_bypass")
 	and self.owner ~= name and force_take == false then
 
-		minetest.chat_send_player(name, S("@1 is owner!", self.owner))
-
 		return false
 	end
 

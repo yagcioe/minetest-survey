@@ -106,5 +106,5 @@ mesecon.register_pressure_plate(
 	"jeija_pressure_plate_stone_wield.png",
 	"jeija_pressure_plate_stone_inv.png",
 	{{"mesecons_gamecompat:cobble", "mesecons_gamecompat:cobble"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
+	{ cracky = 3},
 	mesecon.node_sound.stone)

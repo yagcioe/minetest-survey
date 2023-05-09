@@ -437,7 +437,7 @@ for l, desc in pairs(xdecor_lightbox) do
 	xdecor.register(l .. "_lightbox", {
 		description = desc,
 		tiles = {"xdecor_" .. l .. "_lightbox.png"},
-		groups = {cracky = 3, choppy = 3, oddly_breakable_by_hand = 2},
+		groups = {cracky = 3},
 		light_source = 13,
 		sounds = default.node_sound_glass_defaults()
 	})

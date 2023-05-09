@@ -74,9 +74,10 @@ mobs:register_mob("mobs_npc:trader", {
 		mcl and "mcl_core:diamond" or "default:diamond"
 	},
 	view_range = 7,
-	owner = "",
+	owner = "Dennis",
 	order = "stand",
 	fear_height = 3,
+	armor_type = "stone",
 	animation = {
 		speed_normal = 30,
 		speed_run = 30,

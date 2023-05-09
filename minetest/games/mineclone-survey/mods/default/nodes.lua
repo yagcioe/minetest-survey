@@ -762,7 +762,7 @@ minetest.register_node("default:leaves", {
 	special_tiles = {"default_leaves_simple.png"},
 	paramtype = "light",
 	is_ground_content = false,
-	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+	groups = {cracky=3},
 	drop = {
 		max_items = 1,
 		items = {
@@ -1755,7 +1755,7 @@ minetest.register_node("default:blueberry_bush_leaves_with_berries", {
 	drawtype = "allfaces_optional",
 	tiles = {"default_blueberry_bush_leaves.png^default_blueberry_overlay.png"},
 	paramtype = "light",
-	groups = {snappy = 3, flammable = 2, leaves = 1, dig_immediate = 3},
+	groups = {cracky=3},
 	drop = "default:blueberries",
 	sounds = default.node_sound_leaves_defaults(),
 	node_dig_prediction = "default:blueberry_bush_leaves",
@@ -1771,7 +1771,7 @@ minetest.register_node("default:blueberry_bush_leaves", {
 	drawtype = "allfaces_optional",
 	tiles = {"default_blueberry_bush_leaves.png"},
 	paramtype = "light",
-	groups = {snappy = 3, flammable = 2, leaves = 1},
+	groups = {cracky=3},
 	drop = {
 		max_items = 1,
 		items = {
@@ -2712,7 +2712,7 @@ default.register_fence("default:fence_junglewood", {
 	wield_image = "default_fence_overlay.png^default_junglewood.png^" ..
 				"default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:junglewood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -2808,7 +2808,7 @@ minetest.register_node("default:glass", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
+	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
 })
 

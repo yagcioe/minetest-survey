@@ -815,7 +815,6 @@ local function handle_give_command(cmd, giver, receiver, stackstring)
 	if giver == receiver then
 		return true, msg
 	else
-		core.chat_send_player(receiver, msg)
 		local msg_other
 		if partiality == true then
 			msg_other = S("@1 partially added to inventory of @2.",
@@ -1310,7 +1309,6 @@ core.register_chatcommand("clearinv", {
 					.. "(missing privilege: @1).", "server")
 			end
 			player = core.get_player_by_name(param)
-			core.chat_send_player(param, S("@1 cleared your inventory.", name))
 		else
 			player = core.get_player_by_name(name)
 		end

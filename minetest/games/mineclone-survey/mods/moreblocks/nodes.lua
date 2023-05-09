@@ -209,7 +209,7 @@ local nodes = {
 		paramtype = "light",
 		sunlight_propagates = true,
 		is_ground_content = false,
-		groups = {cracky = 3, oddly_breakable_by_hand = 3},
+		groups = {cracky = 3},
 		sounds = sound_glass,
 	},
 	["clean_glass"] = {

@@ -45,7 +45,7 @@ minetest.register_node("mesecons_button:button_off", {
 		{ -4/16, -2/16, 4/16, 4/16, 2/16, 6/16 }	-- the button itself
 	}
 	},
-	groups = {dig_immediate=2, mesecon_needs_receiver = 1},
+	groups = {cracky=3, mesecon_needs_receiver = 1},
 	description = S("Button"),
 	on_rightclick = function (pos, node)
 		minetest.swap_node(pos, {name = "mesecons_button:button_on", param2=node.param2})
@@ -91,7 +91,7 @@ minetest.register_node("mesecons_button:button_on", {
 		{ -4/16, -2/16, 11/32, 4/16, 2/16, 6/16 }
 	}
     },
-	groups = {dig_immediate=2, not_in_creative_inventory=1, mesecon_needs_receiver = 1},
+	groups = {cracky=3, not_in_creative_inventory=1, mesecon_needs_receiver = 1},
 	drop = 'mesecons_button:button_off',
 	description = S("Button"),
 	sounds = mesecon.node_sound.stone,

@@ -75,6 +75,7 @@ mobs:register_mob("mobs_npc:npc", {
 	view_range = 15,
 	owner = "",
 	order = "wander",
+	armor_type = "stone",
 	fear_height = 3,
 	animation = {
 		speed_normal = 30,
