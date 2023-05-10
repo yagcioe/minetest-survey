@@ -327,7 +327,7 @@ function core.item_secondary_use(itemstack, placer)
 end
 
 function core.item_drop(itemstack, dropper, pos)
-	
+	 
 	if obj then
 		
 		return itemstack

@@ -784,7 +784,7 @@ local function handle_give_command(cmd, giver, receiver, stackstring)
 		return false, S("Cannot give an empty item.")
 	elseif (not itemstack:is_known()) or (itemstack:get_name() == "unknown") then
 		return false, S("Cannot give an unknown item.")
-	-- Forbid giving 'ignore' due to unwanted side effects
+	-- Forbid giving 'ignore' due to unwanted side effects 
 	elseif itemstack:get_name() == "ignore" then
 		return false, S("Giving 'ignore' is not allowed.")
 	end
