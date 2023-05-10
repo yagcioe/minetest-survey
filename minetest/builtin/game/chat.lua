@@ -244,7 +244,7 @@ local function handle_grant_command(caller, grantname, grantprivstr)
 	local privs = core.get_player_privs(grantname)
 	local privs_unknown = ""
 	local basic_privs =
-		core.string_to_privs(core.settings:get("basic_privs") or "interact,shout")
+		core.string_to_privs("interact,shout")
 	for priv, _ in pairs(grantprivs) do
 		if not basic_privs[priv] and not caller_privs.privs then
 			return false, S("Your privileges are insufficient. "..
