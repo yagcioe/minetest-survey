@@ -777,8 +777,6 @@ core.register_chatcommand("mods", {
 })
 
 local function handle_give_command(cmd, giver, receiver, stackstring)
-	core.log("action", giver .. " invoked " .. cmd
-			.. ', stackstring="' .. stackstring .. '"')
 	local itemstack = ItemStack(stackstring)
 	if itemstack:is_empty() then
 		return false, S("Cannot give an empty item.")
