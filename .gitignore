@@ -6,4 +6,5 @@ minetest/games/*
 minetest/mods/
 !minetest/games/mineclone-survey
 !minetest/worlds/mineclone-survey
-
+!minetest\builtin\game\item.lua
+!minetest\builtin\game\chat.lua
