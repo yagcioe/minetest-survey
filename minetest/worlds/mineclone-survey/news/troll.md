@@ -1,1 +1,1 @@
-![200,200](./assets/troll.png)
+![1000,1000](troll.png)
