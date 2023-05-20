@@ -112,29 +112,19 @@ minetest.register_chatcommand("showpp", {
 })
 
 minetest.register_on_joinplayer(function(player)
-    local name = player:get_player_name()
+    local target = player:get_player_name()
     
     local news_formspec = "formspec_version[5]" ..
-            "size[25, 15]" ..
-            "noprepend[]" ..
-            "bgcolor[" .. colors.background_color .. "]" ..
-            "button_exit[21.8, 13.8; 3, 1;exit; OK]"
+                "size[120, 67.5; true]"..
+                "no_prepend[]"..
+                "image[0,0;120,67.5;".."movement.png]"..
+                "button_exit[105, 60; 12, 4;exit; OK]"
+            
 
-        local news_filename = minetest.get_worldpath() .. "/news/tut1.md"
-        local news_file = io.open(news_filename, "r")
-        if news_file == nil then
-			minetest.chat_send_player(name, "File doesn´t exist. ")
-			return
-		end
-        local news_markdown = news_file:read("*a")
-        news_file:close()
-
-        news_formspec = news_formspec .. md2f.md2f(0.2, 0.2, 24.8, 13.4, news_markdown, "server_news", colors)
-
-        minetest.show_formspec(name, "server_news", news_formspec)
+        minetest.show_formspec(target, "server_news", news_formspec)
     
         minetest.register_on_player_receive_fields(function(player, formname, fields)
-            name = player:get_player_name()
+            local name = player:get_player_name()
 
             -- Don't do anything when the exit button is clicked, because no checkbox data is sent then
             if not fields.exit then

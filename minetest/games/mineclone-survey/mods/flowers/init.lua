@@ -58,25 +58,22 @@ local function add_simple_flower(name, desc, box, f_groups)
 			fixed = box
 		},
 		on_place = function(itemstack, placer, pointed_thing)
+			local player_name = placer:get_player_name()
+			if player_name == nil then
+				player_name = ""
+			end
 			local pos = pointed_thing.above
 			local node = minetest.get_node(pointed_thing.under)
 	
-	
-			if node.name == "default:grass_scenario" then
-				local player_name = placer and placer:get_player_name() or ""
-				if not minetest.is_protected(pos, player_name) then
-					minetest.set_node(pos, {name = itemstack:get_name()})
-					if not minetest.is_creative_enabled(player_name) then
-						itemstack:take_item()
-					end
-				else
-					minetest.chat_send_player(player_name, "Node is protected")
-					minetest.record_protection_violation(pos, player_name)
+			if node.name == "default:grass_scenario" and
+					minetest.get_node(pos).name == "air" then
+				minetest.set_node(pos, {name = itemstack:get_name()})
+				if not minetest.is_creative_enabled(player_name) then
+					itemstack:take_item()
 				end
 			end
-	
 			return itemstack
-		end
+		end,
 	})
 end
 
