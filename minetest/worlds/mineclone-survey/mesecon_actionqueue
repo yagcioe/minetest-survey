@@ -1,1 +1,1 @@
-return {}
+local _={};_[1]="receptor_off";_[2]="priority";_[3]="receptor_on";return {{pos={y=6,x=-323,z=126},func=_[1],time=0,[_[2]]=1,params={}},{pos={y=6,x=-323,z=126},func=_[3],time=0,[_[2]]=1,params={}},{pos={y=6,x=-323,z=126},func=_[1],time=0,[_[2]]=1,params={}},{pos={y=6,x=-323,z=126},func=_[3],time=0,[_[2]]=1,params={}},{pos={y=6,x=-323,z=126},func=_[1],time=0,[_[2]]=1,params={}}}
