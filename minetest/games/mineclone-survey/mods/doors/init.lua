@@ -470,7 +470,7 @@ doors.register("door_wood", {
 		tiles = {{ name = "doors_door_wood.png", backface_culling = true }},
 		description = S("Wooden Door"),
 		inventory_image = "doors_item_wood.png",
-		groups = {node = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {node = 1, cracky=3},
 		gain_open = 0.06,
 		gain_close = 0.13,
 		recipe = {

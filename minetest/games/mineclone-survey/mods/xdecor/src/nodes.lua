@@ -568,7 +568,7 @@ register_hard_node("wood_tile", S("Wooden Tile"), {
 xdecor.register("table", {
 	description = S("Table"),
 	tiles = {"xdecor_wood.png"},
-	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {cracky=3},
 	sounds = default.node_sound_wood_defaults(),
 	node_box = xdecor.pixelbox(16, {
 		{0, 14, 0, 16, 2, 16}, {5.5, 0, 5.5, 5, 14, 6}
