@@ -725,7 +725,7 @@ minetest.register_node("default:wood", {
 	place_param2 = 0,
 	tiles = {"default_wood.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {cracky=3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -2551,7 +2551,7 @@ local default_bookshelf_def = {
 		"default_wood.png", "default_bookshelf.png", "default_bookshelf.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {cracky=3},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_construct = function(pos)
@@ -2864,6 +2864,7 @@ minetest.register_node("default:meselamp", {
 
 default.register_mesepost("default:mese_post_light", {
 	description = S("Apple Wood Mese Post Light"),
+	groups = {cracky = 3},
 	texture = "default_fence_wood.png",
 	material = "default:wood",
 })
@@ -2883,12 +2884,14 @@ default.register_mesepost("default:mese_post_light_junglewood", {
 
 default.register_mesepost("default:mese_post_light_pine_wood", {
 	description = S("Pine Wood Mese Post Light"),
+	groups = {cracky = 3},
 	texture = "default_fence_pine_wood.png",
 	material = "default:pine_wood",
 })
 
 default.register_mesepost("default:mese_post_light_aspen_wood", {
 	description = S("Aspen Wood Mese Post Light"),
+	groups = {cracky = 3},
 	texture = "default_fence_aspen_wood.png",
 	material = "default:aspen_wood",
 })

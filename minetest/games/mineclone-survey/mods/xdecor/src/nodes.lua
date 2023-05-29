@@ -456,7 +456,7 @@ for f, desc in pairs(xdecor_potted) do
 	xdecor.register("potted_" .. f, {
 		description = desc,
 		walkable = false,
-		groups = {snappy = 3, flammable = 3, plant = 1, flower = 1},
+		groups = {cracky=3},
 		tiles = {"xdecor_" .. f .. "_pot.png"},
 		inventory_image = "xdecor_" .. f .. "_pot.png",
 		drawtype = "plantlike",
@@ -488,7 +488,7 @@ xdecor.register("painting_1", {
 	wield_image = "xdecor_painting_empty.png",
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 2, attached_node = 1},
+	groups = {cracky=3, attached_node = 1},
 	sounds = default.node_sound_wood_defaults(),
 	node_box = painting_box,
 	node_placement_prediction = "",
@@ -514,9 +514,7 @@ for i = 2, 4 do
 		drop = "xdecor:painting_1",
 		sunlight_propagates = true,
 		groups = {
-			choppy = 3,
-			oddly_breakable_by_hand = 2,
-			flammable = 2,
+			cracky=3,
 			attached_node = 1,
 			not_in_creative_inventory = 1
 		},
