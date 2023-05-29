@@ -180,7 +180,7 @@ local function node_detector_scan(pos)
 	local meta = minetest.get_meta(pos)
 
 	local distance = meta:get_int("distance")
-	local distance_max = mesecon.setting("node_detector_distance_max", 10)
+	local distance_max = 30
 	if distance < 0 then distance = 0 end
 	if distance > distance_max then distance = distance_max end
 
@@ -195,7 +195,7 @@ end
 
 local function node_detector_send_node_name(pos, node, channel, meta)
 	local distance = meta:get_int("distance")
-	local distance_max = mesecon.setting("node_detector_distance_max", 10)
+	local distance_max = 30
 	if distance < 0 then distance = 0 end
 	if distance > distance_max then distance = distance_max end
 	local nodename = minetest.get_node(

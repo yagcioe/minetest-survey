@@ -88,7 +88,8 @@ minetest.register_chatcommand("showpp", {
         local news_formspec = "formspec_version[5]" ..
                 "size[120, 67.5; true]"..
                 "no_prepend[]"..
-                "image[0,0;120,67.5;"..filename..".png]"
+                "image[0,0;120,67.5;"..filename..".png]"..
+                "button_exit[100, 58.5; 12, 4;exit; OK]"
             
             
 
@@ -118,7 +119,7 @@ minetest.register_on_joinplayer(function(player)
                 "size[120, 67.5; true]"..
                 "no_prepend[]"..
                 "image[0,0;120,67.5;".."movement.png]"..
-                "button_exit[105, 60; 12, 4;exit; OK]"
+                "button_exit[100, 58.5; 12, 4;exit; OK]"
             
 
         minetest.show_formspec(target, "server_news", news_formspec)

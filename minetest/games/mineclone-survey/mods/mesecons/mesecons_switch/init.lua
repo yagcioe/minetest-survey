@@ -16,13 +16,13 @@ mesecon.register_node("mesecons_switch:mesecon_switch", {
 		minetest.sound_play("mesecons_switch", { pos = pos }, true)
 	end
 },{
-	groups = {dig_immediate=2},
+	groups = {cracky=3},
 	tiles = {	"mesecons_switch_side.png", "mesecons_switch_side.png",
 				"mesecons_switch_side.png", "mesecons_switch_side.png",
 				"mesecons_switch_side.png", "mesecons_switch_off.png"},
 	mesecons = {receptor = { state = mesecon.state.off }}
 },{
-	groups = {dig_immediate=2, not_in_creative_inventory=1},
+	groups = {cracky=3, not_in_creative_inventory=1},
 	tiles = {	"mesecons_switch_side.png", "mesecons_switch_side.png",
 				"mesecons_switch_side.png", "mesecons_switch_side.png",
 				"mesecons_switch_side.png", "mesecons_switch_on.png"},
