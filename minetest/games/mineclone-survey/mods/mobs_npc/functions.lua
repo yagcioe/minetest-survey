@@ -115,7 +115,7 @@ if minetest.get_modpath("simple_dialogs") then
 	end)
 
 	simple_dialogs.register_hook(function(npcself, playername,hook)
-			local p = core.parse_coordinates(-359, 6, 113)
+			local p = core.parse_coordinates(-359, 6, 112)
 			local entityname = "mobs_npc:trader"
 			core.add_entity(p, entityname)
 
