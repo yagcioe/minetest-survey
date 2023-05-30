@@ -115,12 +115,24 @@ if minetest.get_modpath("simple_dialogs") then
 	end)
 
 	simple_dialogs.register_hook(function(npcself, playername,hook)
+		if hook.func == "TRADE" then
 			local p = core.parse_coordinates(-359, 6, 112)
 			local entityname = "mobs_npc:trader"
 			core.add_entity(p, entityname)
+		end
+	end)
 
+	simple_dialogs.register_hook(function(npcself, playername,hook)
+		if hook.func == "SPAWN" then
+			local p = core.parse_coordinates(-333, 2, -387)
+			core.chat_send_player("Dennis", hook.func)
+			local entityname = "mobs_npc:trader"
+			core.add_entity(p, entityname)
+		end
 	end)
 end
+
+	
 
 
 

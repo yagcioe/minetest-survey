@@ -17,15 +17,15 @@ mesecon.register_node("mesecons_switch:mesecon_switch", {
 	end
 },{
 	groups = {cracky=3},
-	tiles = {	"mesecons_switch_side.png", "mesecons_switch_side.png",
-				"mesecons_switch_side.png", "mesecons_switch_side.png",
-				"mesecons_switch_side.png", "mesecons_switch_off.png"},
+	tiles = {	"mesecons_switch_off.png", "mesecons_switch_off.png",
+				"mesecons_switch_off.png", "mesecons_switch_off.png",
+				"mesecons_switch_off.png", "mesecons_switch_off.png"},
 	mesecons = {receptor = { state = mesecon.state.off }}
 },{
 	groups = {cracky=3, not_in_creative_inventory=1},
-	tiles = {	"mesecons_switch_side.png", "mesecons_switch_side.png",
-				"mesecons_switch_side.png", "mesecons_switch_side.png",
-				"mesecons_switch_side.png", "mesecons_switch_on.png"},
+	tiles = {	"mesecons_switch_on.png", "mesecons_switch_on.png",
+				"mesecons_switch_on.png", "mesecons_switch_on.png",
+				"mesecons_switch_on.png", "mesecons_switch_on.png"},
 	mesecons = {receptor = { state = mesecon.state.on }}
 })
 
