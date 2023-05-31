@@ -131,8 +131,8 @@ if minetest.get_modpath("simple_dialogs") then
 	end)
 
 	simple_dialogs.register_hook(function(npcself, playername,hook)
-		if hook.func == "ENDING" then
-			local p = core.parse_coordinates(-363, 7, 108)
+		if hook.func == "SPAWNERINO" then
+			local p = core.parse_coordinates(-363, 6, 108)
 			local entityname = "mobs_npc:trader"
 			core.add_entity(p, entityname)
 		end

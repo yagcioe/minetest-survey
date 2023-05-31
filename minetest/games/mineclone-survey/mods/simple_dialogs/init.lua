@@ -409,9 +409,9 @@ function simple_dialogs.load_dialog_cmnd(line)
 				core.chat_send_player("Dennis",str)
 				newcmnd.func = "SPAWN"
 			end
-			if(string.match(str, "ending",1)) then
+			if(string.match(str, "spawnerino",1)) then
 				core.chat_send_player("Dennis",str)
-				newcmnd.func = "ENDING"
+				newcmnd.func = "SPAWNERINO"
 			end
 			local spc2=string.find(str," ",1)
 			--minetest.log("simple_dialogs->ldc hook str="..str.." spc2="..spc2)
