@@ -553,9 +553,9 @@ local function on_punch_robot (pos, node, puncher, pointed_thing)
 			if id > 0 then
 				utils.add_robot_to_list (id, pos)
 
-				minetest.show_formspec (puncher:get_player_name (),
-												"lwscratch:robot_stop",
-												utils.robot_stop_formspec (id))
+				--minetest.show_formspec (puncher:get_player_name (),
+												--"lwscratch:robot_stop",
+												--utils.robot_stop_formspec (id))
 
 			end
 		end
@@ -573,7 +573,9 @@ local function on_rightclick (pos, node, clicker, itemstack, pointed_thing)
 			if meta then
 				owner = meta:get_string ("owner")
 			end
-
+			if(clicker:get_player_name () ~= owner) then
+				return
+			end
 			local spec =
 			"formspec_version[3]"..
 			"size[8.0,4.0,false]"..
