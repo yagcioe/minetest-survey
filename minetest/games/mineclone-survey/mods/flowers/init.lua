@@ -75,6 +75,41 @@ local function add_simple_flower(name, desc, box, f_groups)
 			return itemstack
 		end,
 	})
+	minetest.register_node("flowers:scenario_" .. name, {
+		description = desc,
+		drawtype = "plantlike",
+		waving = 1,
+		tiles = {"flowers_" .. name .. ".png"},
+		inventory_image = "flowers_" .. name .. ".png",
+		wield_image = "flowers_" .. name .. ".png",
+		sunlight_propagates = true,
+		paramtype = "light",
+		walkable = false,
+		buildable_to = true,
+		groups = {attached_node=1,flower=1, flora=1,cracky=3 },
+		sounds = default.node_sound_leaves_defaults(),
+		selection_box = {
+			type = "fixed",
+			fixed = box
+		},
+		on_place = function(itemstack, placer, pointed_thing)
+			local player_name = placer:get_player_name()
+			if player_name == nil then
+				player_name = ""
+			end
+			local pos = pointed_thing.above
+			local node = minetest.get_node(pointed_thing.under)
+	
+			if node.name == "default:grass_scenario" and
+					minetest.get_node(pos).name == "air" then
+				minetest.set_node(pos, {name = itemstack:get_name()})
+				if not minetest.is_creative_enabled(player_name) then
+					itemstack:take_item()
+				end
+			end
+			return itemstack
+		end,
+	})
 end
 
 flowers.datas = {
