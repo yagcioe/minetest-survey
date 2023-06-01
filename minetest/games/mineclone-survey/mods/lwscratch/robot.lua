@@ -656,7 +656,7 @@ minetest.register_node ("lwscratch:robot", {
 	on_metadata_inventory_take = on_metadata_inventory_take,
 	on_metadata_inventory_move = on_metadata_inventory_move,
 	on_punch = on_punch_robot,
-	on_rightclick = on_rightclick,
+	--on_rightclick = on_rightclick,
 	mesecons = {effector = {
 		action_on = utils.robot_run
 	}},
@@ -727,7 +727,7 @@ minetest.register_node ("lwscratch:robot_on", {
 	on_metadata_inventory_take = on_metadata_inventory_take,
 	on_metadata_inventory_move = on_metadata_inventory_move,
 	on_punch = on_punch_robot,
-	on_rightclick = on_rightclick,
+	--on_rightclick = on_rightclick,
 })
 
 
