@@ -235,9 +235,9 @@ local function after_place_node (pos, placer, itemstack, pointed_thing)
 		return true
 
 	elseif not unique and placer and placer:is_player () then
-		minetest.show_formspec (placer:get_player_name (),
-										"lwscratch:robot_set_owner",
-										utils.set_owner_formspec (id))
+		--minetest.show_formspec (placer:get_player_name (),
+										--"lwscratch:robot_set_owner",
+										--utils.set_owner_formspec (id))
 	end
 
 	-- If return true no item is taken from itemstack
@@ -573,15 +573,12 @@ local function on_rightclick (pos, node, clicker, itemstack, pointed_thing)
 			if meta then
 				owner = meta:get_string ("owner")
 			end
-			if(clicker:get_player_name () ~= owner) then
-				return
-			end
 			local spec =
 			"formspec_version[3]"..
 			"size[8.0,4.0,false]"..
 			"label[1.0,1.0;Owned by "..minetest.formspec_escape (owner).."]"..
 			"button_exit[3.0,2.0;2.0,1.0;close;Close]"
-
+			minetest.close_formspec(clicker:get_player_name(), utils.get_robot_formspec(pos))
 			--minetest.show_formspec (clicker:get_player_name (),
 											--"lwscratch:robot_privately_owned",
 											--spec)
@@ -656,7 +653,7 @@ minetest.register_node ("lwscratch:robot", {
 	on_metadata_inventory_take = on_metadata_inventory_take,
 	on_metadata_inventory_move = on_metadata_inventory_move,
 	on_punch = on_punch_robot,
-	--on_rightclick = on_rightclick,
+	on_rightclick = on_rightclick,
 	mesecons = {effector = {
 		action_on = utils.robot_run
 	}},
@@ -727,7 +724,7 @@ minetest.register_node ("lwscratch:robot_on", {
 	on_metadata_inventory_take = on_metadata_inventory_take,
 	on_metadata_inventory_move = on_metadata_inventory_move,
 	on_punch = on_punch_robot,
-	--on_rightclick = on_rightclick,
+	on_rightclick = on_rightclick,
 })
 
 
