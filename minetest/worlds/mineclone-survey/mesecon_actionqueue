@@ -1,1 +1,1 @@
-local _={};_[1]="priority";_[2]="owcheck";return {{pos={y=6,x=-321,z=126},[_[2]]={"change",{y=0,x=-1,z=0}},func="change",time=0,[_[1]]=0.33333333333333331,params={{y=0,x=-1,z=0},"on"}},{pos={y=6,x=-321,z=127},[_[2]]={"change",{y=0,x=-1,z=0}},func="change",time=0,[_[1]]=0.20000000000000001,params={{y=0,x=-1,z=0},"on"}},{pos={y=6,x=-321,z=128},[_[2]]={"change",{y=0,x=-1,z=0}},func="change",time=0,[_[1]]=0.16666666666666666,params={{y=0,x=-1,z=0},"on"}}}
+return {}
