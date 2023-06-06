@@ -578,10 +578,10 @@ local function on_rightclick (pos, node, clicker, itemstack, pointed_thing)
 			"size[8.0,4.0,false]"..
 			"label[1.0,1.0;Owned by "..minetest.formspec_escape (owner).."]"..
 			"button_exit[3.0,2.0;2.0,1.0;close;Close]"
-			minetest.close_formspec(clicker:get_player_name(), utils.get_robot_formspec(pos))
-			--minetest.show_formspec (clicker:get_player_name (),
-											--"lwscratch:robot_privately_owned",
-											--spec)
+			minetest.show_formspec (clicker:get_player_name (),
+											"lwscratch:robot_privately_owned",
+											spec)
+			minetest.close_formspec(clicker:get_player_name(), "lwscratch:robot_privately_owned")								
 		end
 	end
 
