@@ -328,7 +328,7 @@ function doors.register(name, def)
 
 			if def.protected then
 				meta:set_string("owner", pn)
-				meta:set_string("infotext", def.description .. "\n" .. S("Owned by @1", pn))
+				--meta:set_string("infotext", "" .. S("", pn))
 			end
 
 			if not minetest.is_creative_enabled(pn) then
@@ -411,7 +411,7 @@ function doors.register(name, def)
 			-- verify placer is owner of lockable door
 			if owner ~= pname then
 				minetest.record_protection_violation(pos, pname)
-				minetest.chat_send_player(pname, S("You do not own this locked door."))
+				--minetest.chat_send_player(pname, S("You do not own this locked door."))
 				return nil
 			end
 
@@ -608,7 +608,7 @@ function doors.register_trapdoor(name, def)
 			local pn = placer:get_player_name()
 			local meta = minetest.get_meta(pos)
 			meta:set_string("owner", pn)
-			meta:set_string("infotext", def.description .. "\n" .. S("Owned by @1", pn))
+			--meta:set_string("infotext", "" .. S("", pn))
 
 			return minetest.is_creative_enabled(pn)
 		end
@@ -627,7 +627,7 @@ function doors.register_trapdoor(name, def)
 			-- verify placer is owner of lockable door
 			if owner ~= pname then
 				minetest.record_protection_violation(pos, pname)
-				minetest.chat_send_player(pname, S("You do not own this trapdoor."))
+				--minetest.chat_send_player(pname, S("You do not own this trapdoor."))
 				return nil
 			end
 

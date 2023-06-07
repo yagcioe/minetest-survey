@@ -1412,7 +1412,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		or not contextdlg[playername].topic 
 		or not contextdlg[playername].subtopic 
 		then 
-			minetest.log("simple_dialogs->receive_fields dialog: ERROR in dialog receive_fields: context not properly set")
+			--minetest.log("simple_dialogs->receive_fields dialog: ERROR in dialog receive_fields: context not properly set")
 			return 
 	end
 	local npcId=contextdlg[playername].npcId --get the npc id from local context
@@ -1427,7 +1427,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		or not npcself.dialog.dlg[topic]
 		or not npcself.dialog.dlg[topic][subtopic]
 		then 
-			minetest.log("simple_dialogs->receive_fields dialog: ERROR in dialog receive_fields: npcself.dialog.dlg[topic][subtopic] not found")
+			--minetest.log("simple_dialogs->receive_fields dialog: ERROR in dialog receive_fields: npcself.dialog.dlg[topic][subtopic] not found")
 			return
 	end
 	--
@@ -1445,7 +1445,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 			local newtopic=npcself.dialog.dlg[topic][subtopic].reply[r].target
 			simple_dialogs.show_dialog_formspec(playername,npcself,newtopic)
 		else
-			minetest.log("simple_dialogs ERROR in receive_fields (topic="..topic.." subtopc="..subtopic..") r="..r.." is invalid")
+			--minetest.log("simple_dialogs ERROR in receive_fields (topic="..topic.." subtopc="..subtopic..") r="..r.." is invalid")
 			minetest.close_formspec(playername, "simple_dialogs:dialog")
 		end
 	end
